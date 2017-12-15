@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dockerTest" time="0.10600000000000001">
+  <testsuite name="DeleteDataALL" id="2a42e38f-5cff-43c0-a5fd-1fdc3095936f" tests="1" time="0.026">
+    <testcase name="Status code is 200" time="0.026"/>
+  </testsuite>
+  <testsuite name="InsertCSV" id="d23e8c57-c9b6-43dd-8497-269da4c495b7" tests="1" time="0.052">
+    <testcase name="Status code is 200" time="0.052"/>
+  </testsuite>
+  <testsuite name="countDate" id="079e7c0e-e735-42b0-ad05-4b81e1d5e595" tests="2" time="0.004">
+    <testcase name="Status code is 200" time="0.004"/>
+    <testcase name="Count Test 'user' Before" time="0.004"/>
+  </testsuite>
+  <testsuite name="countData1" id="1b38d60c-a914-48ed-8f8f-a4b6699a420c" tests="2" time="0.004">
+    <testcase name="Status code is 200" time="0.004"/>
+    <testcase name="Count Test 'user1' Before" time="0.004"/>
+  </testsuite>
+  <testsuite name="DeleteData" id="6c9f8b24-3236-49b6-94dd-a0d0f08e8a08" tests="1" time="0.012">
+    <testcase name="Status code is 200" time="0.012"/>
+  </testsuite>
+  <testsuite name="countDataAfter" id="09a0c04c-730a-4d76-82d1-4c1b758cc242" tests="2" time="0.004">
+    <testcase name="Status code is 200" time="0.004"/>
+    <testcase name="Count Test" time="0.004"/>
+  </testsuite>
+  <testsuite name="countData1After" id="bd5e2e65-2de3-4dbc-b421-06e6d60bf8ad" tests="2" time="0.004">
+    <testcase name="Status code is 200" time="0.004"/>
+    <testcase name="Count Test" time="0.004"/>
+  </testsuite>
+</testsuite>

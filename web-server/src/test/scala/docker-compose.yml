@@ -1,0 +1,35 @@
+version: '3.2'
+services:
+  newman-app:
+        build: ./dockerfiles/newman/
+        volumes:
+          - type: bind
+            source: /home/mishae/workFolder/docker/web-server/src/test/scala
+            target: /etc/newman
+        image: newman-ubuntu-image
+        depends_on:
+          - my-app-jar-example
+        command: ["./dockerfiles/tools/wait-for-it.sh",  "my-app-jar-example-name:8080", "--", "./datatest/collections/tests/runner-test.sh"]
+  my-app-jar-example:
+    build: ./dockerfiles/jar
+    volumes:
+              - type: bind
+                source: /home/mishae/workFolder/docker/web-server/src/test/scala
+                target: /home
+    ports:
+      - 8080:8080
+    container_name: my-app-jar-example-name
+    depends_on:
+      - cantor-db
+    command: ["./dockerfiles/tools/wait-for-it.sh",  "cantor-db:5432"]
+  cantor-db:
+      image: postgres:9.5
+      container_name: cantor-db
+      ports:
+        - 5432:5432
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: postgres
+      volumes:
+        - ./datatest/dump/init.sql:/docker-entrypoint-initdb.d/init.sql

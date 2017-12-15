@@ -1,0 +1,32 @@
+version: '3.2'
+services:
+  my-app-jar-example:
+    build: ./dockerfiles/jar/
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+    container_name: my-app-jar-example-name
+#  cantor-db:
+#      image: postgres:latest
+#      container_name: cantor-db
+#      ports:
+#        - 5432:5432
+#      environment:
+#        POSTGRES_USER: postgres
+#        POSTGRES_PASSWORD: postgres
+#        POSTGRES_DB: postgres
+#      volumes:
+#        - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  newman-app:
+      build: ./dockerfiles/newman/
+#      tty: true
+      volumes:
+        - type: bind
+          source: /home/mishae/workFolder/docker/web-server/src/test/newman
+          target: /etc/newman
+      image: newman-ubuntu-image
+      container_name: newman-ubuntu-container-name
+      depends_on:
+        - my-app-jar-example
+      command: ["./wait-for-it.sh","-t", "30",  "my-app-jar-example-name:8080", "--", "newman", "run", "dockerTest.postman_collection.json", "-e", "local-docker-tets.postman_environment.json", "-r", "cli,html", "--reporter-html-export", "./report/newman-report.html"]

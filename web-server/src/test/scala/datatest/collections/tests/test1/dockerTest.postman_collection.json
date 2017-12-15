@@ -1,0 +1,208 @@
+{
+	"variables": [],
+	"info": {
+		"name": "dockerTest",
+		"_postman_id": "89f907d2-b92c-74dc-e973-61926066dba9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DeleteDataALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code == 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{address}}/drop/all",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\"name\": \"Misha\",\n\t\"age\": 48\n\t}, {\n\t\"name\": \"Pasha\",\n\t\"age\": 16\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "InsertCSV",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code == 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{address}}/insert/all/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\"name\": \"Misha\",\n\t\"age\": 48\n\t}, {\n\t\"name\": \"Pasha\",\n\t\"age\": 16\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "countDate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Count Test 'user' Before\"] = responseBody === '2';"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{address}}/get/count/users",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"credentials\": \"{{credentials}}\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "countData1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Count Test 'user1' Before\"] = responseBody === '0';"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{address}}/get/count/users1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"credentials\": \"{{credentials}}\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code == 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{address}}/drop/all",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\"name\": \"Misha\",\n\t\"age\": 48\n\t}, {\n\t\"name\": \"Pasha\",\n\t\"age\": 16\n\t}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "countDataAfter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Count Test\"] = responseBody === '0';"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{address}}/get/count/users",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"credentials\": \"{{credentials}}\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "countData1After",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Count Test\"] = responseBody === '0';"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{address}}/get/count/users1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"credentials\": \"{{credentials}}\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

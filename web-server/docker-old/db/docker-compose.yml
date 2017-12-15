@@ -1,0 +1,13 @@
+version: '2'
+services:
+  cantor-db:
+    image: postgres:9.5
+    container_name: cantor-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

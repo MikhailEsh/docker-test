@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dockerTest1" time="0.45">
+  <testsuite name="DeleteDataALL" id="36baffc8-b5e0-43f8-ad75-0dc4d90c17eb" tests="1" time="0.211">
+    <testcase name="Status code is 200" time="0.211"/>
+  </testsuite>
+  <testsuite name="countDate1" id="e8739884-817e-455d-b657-83af7c144ea4" tests="2" time="0.12">
+    <testcase name="Status code is 200" time="0.12"/>
+    <testcase name="Count Test 'user1' Before" time="0.12"/>
+  </testsuite>
+  <testsuite name="countData11" id="37947c3c-b7c0-4d75-9fb3-07a98746dcd9" tests="2" time="0.005">
+    <testcase name="Status code is 200" time="0.005"/>
+    <testcase name="Count Test 'user1' Before" time="0.005"/>
+  </testsuite>
+  <testsuite name="InsertDataUsers" id="383129fe-ce3f-4c0a-8385-f90d1d0dfacd" tests="1" time="0.072">
+    <testcase name="Status code is 200" time="0.072"/>
+  </testsuite>
+  <testsuite name="get/all/users" id="7daa7015-4a22-4fb6-acaf-62325dab395f" tests="2" time="0.017">
+    <testcase name="Status code is 200" time="0.017"/>
+    <testcase name="Test name Kubic from user" time="0.017"/>
+  </testsuite>
+  <testsuite name="get/all/users1" id="259f23c4-afd7-410b-9600-3687346670b9" tests="2" time="0.006">
+    <testcase name="Status code is 200" time="0.006"/>
+    <testcase name="Test age Rambo from user1" time="0.006"/>
+  </testsuite>
+  <testsuite name="FailTest" id="0886c179-2c64-4e03-bc7f-1c5dfb56488b" tests="2" time="0.004">
+    <testcase name="Status code is 200" time="0.004"/>
+    <testcase name="Fail tests" time="0.004">
+      <failure type="AssertionFailure">
+        <![CDATA[Failed 1 times.]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="DeleteData" id="cfbd79b8-f98f-47ea-aa07-49b7c0ed0557" tests="1" time="0.015">
+    <testcase name="Status code is 200" time="0.015"/>
+  </testsuite>
+</testsuite>

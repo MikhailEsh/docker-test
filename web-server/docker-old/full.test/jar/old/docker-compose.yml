@@ -1,0 +1,11 @@
+version: '3'
+services:
+  my-app-example:
+    image: ibmjava:8-sdk
+    volumes:
+      - "/server-web.jar"
+    command:
+      sh -c 'touch /server-web.jar'
+    environment:
+      - JAVA_OPTS=""
+    entrypoint: [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /server-web.jar" ]
